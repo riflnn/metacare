@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isi Thread Anonim Stress Nugas Praktikum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('Pemantauan Progress (3).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: calc(100% - 60px);
+            height: calc(100% - 60px);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .back-arrow {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .back-icon {
+            width: 140%;
+            height: 140%;
+            object-fit: contain;
+        }
+
+        .thread-content {
+            background-image: url('Rectangle 34.png');
+            padding: 80px;
+            border-radius: 10px;
+            width: 90%;
+            text-align: left;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        .thread-title {
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Sansita Swashed', cursive;
+        }
+
+        .comments-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .comment {
+            background-color: #dce7f9;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: inline-block; 
+            max-width: 50%; 
+            margin-left: 70px;
+            margin-right: 100px;
+        }
+
+        .add-comment-container {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .add-comment-container input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .send-button {
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .send-icon {
+            width: 70px; 
+            height: 60px;
+            object-fit: contain;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            <a href="DaftarThread.html">
+            <img src="Go Back.png" alt="Back Button" class="back-icon">
+        </a>
+        </div>
+        <div class="thread-content">
+            <div class="thread-title">"Stress Nugas Praktikum"</div>
+            <p> Aku ngerjain tugas hingga sakit mental cuma gara-gara matkul RSI 😩 Hal ini bermula karena perubahan kurikulum FILKOM yang membuat dua matkul digabung jadi satu bernama RSI. Akibatnya banyak tugas yang harus dikemas menjadi ringkas dan deadline yang mepet. Tapi, terimakasih kepada kakak asprak yang baik hati, membuat deadline dilamain.</p>
+        </div>
+        <div class="comments-container">
+            <div class="comment">bener akuu juga stress nugass. Tapi, bersyukur banget sama kakak asprak yang baik hati. </div>
+            <div class="comment"> Asprak RSI-C pengertian banget dan memberi perpanjangan deadline ❤️</div>
+        </div>
+        <div class="add-comment-container">
+            <input type="text" placeholder="Tulis Komentar...">
+            <button class="send-button">
+                <img src="image 25.png" alt="Send Comment" class="send-icon">
+            </button>
+        </div>
+    </div>
+</body>
+</html>

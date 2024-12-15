@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaCare Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('RSIP/Dashboard\ \(1\).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top; 
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-right: 800px;
+        }
+
+        .header img {
+            width: 80px;
+            margin-top: 60px;
+        }
+
+        .header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 40px;
+            color: #062B4F;
+            margin-top: 60px;
+        }
+
+        .logout {
+            font-weight: bold;
+            color: #000000;
+            background-color: #93C4FF;
+            position: fixed;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.25em;
+            cursor: pointer;
+            margin-top: -50px;
+            margin-left: 1200px;
+        }
+
+        .welcome-container {
+            width: 100%;
+            text-align: left;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+
+        .welcome-container h2 {
+            font-size: 35px;
+            color: #032F45;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        .description {
+            margin-top: 30px;
+            background-color: #93C4FF;
+            width: 35%; 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+            margin-right: 950px;
+        }
+
+        .description p {
+            font-size: 20px;
+            color: #032F45;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 32px; 
+            width: 700px; 
+            margin-top: -355px;
+            justify-content: flex-end; 
+            margin-left: 500px;
+            justify-content: center; 
+        }
+
+        .feature {
+            width: 150px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature img {
+            width: 170px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="RSIP/Logo.png" alt="MetaCare Logo">
+            <h1>Your Well-Being is Our Priority</h1>
+            <a href="logout.php" class="logout">Logout</a>
+        </div>
+        
+        <div class="welcome-container">
+            <h2>Selamat Datang!</h2>
+        </div>
+
+        <div class="description">
+            <p>MetaCare adalah platform kesehatan mental yang didedikasikan untuk mendukung individu dalam mengelola dan meningkatkan kesejahteraan mental mereka. Metacare berfokus pada tujuan SDGs poin 3: Kesehatan yang Baik dan Kesejahteraan, MetaCare hadir sebagai jembatan antara pengguna dan tenaga profesional kesehatan mental.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <a href="HTML_MetaCare/MoodTracker.php">
+                    <img src="RSIP/riwayat suasana hati.png" alt="Mood Tracker">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="RSIP/Pemantauan.html">
+                    <img src="RSIP/pemantauan progres.png" alt="Pemantauan Progres">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="HTML_MetaCare/Diary.html">
+                    <img src="RSIP/diaty.png" alt="Diary">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="konseling online/konselingHome.html">
+                    <img src="RSIP/konselor.png" alt="Konseling">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="SDE/SDE.html">
+                    <img src="RSIP/edukasi.png" alt="Edukasi">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="mindfulquotes.html">
+                    <img src="RSIP/quotes.png" alt="Mindful Quotes">
+                </a>
+            </div>
+            <div class="feature">
+                <a href="RSIP/DaftarThread.html">
+                    <img src="RSIP/thread.png" alt="Thread Anonim">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

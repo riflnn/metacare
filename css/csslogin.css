@@ -1,0 +1,98 @@
+
+body {
+    background-color:rgb(197, 211, 236);
+}
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    margin-left: 50px;
+}
+
+.welcoming {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.beranda-title {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(9, 68, 117);
+    margin: 20px;
+}
+.welcoming img{
+    width: 600px;
+}
+
+.katakata{
+    width: 600px;
+    text-align: center;
+}
+
+.katakata h1{
+    font-size: 30px;
+    color: #1C4060;
+    letter-spacing: 6px;
+    font-weight: bold;  
+}
+
+.katakata p1{
+    font-size: 20px;
+    color: #1C4060;
+}
+
+.isiform{
+    text-align: left;
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+    width: 800px
+}
+.isiform label {
+    font-size: 20px;
+    color: black;
+    display: block;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.isiform input {
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+.isiform button {
+    width: 90%;
+    padding: 17px;
+    margin-top: 20px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.isiform .gugel button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #4285F4;
+    border: none;
+    cursor: pointer;
+}
+.google-logo {
+    width: 20px; 
+    height: auto;
+    margin-right: 8px;
+    margin-bottom: 2px;
+}
+
+.isiform .forgetpw{
+    margin-left: 590px;
+    margin-top: 20px;
+}

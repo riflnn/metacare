@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Konsultasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins';
+        }
+
+        body {
+            background-color: #e3f2fd;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: #e3f2fd;
+        }
+
+        .sidebar {
+    position: relative; /* Tambahkan ini untuk posisi absolute dari icon */
+    width: 35%;
+    background-color: #c5e1f9;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.consultation-image {
+    max-width: 100%; /* Menghindari gambar melebihi lebar kontainer */
+    max-height: 300px; /* Batasi tinggi agar tidak terlalu besar */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.back-icon {
+    position: absolute; /* Mengatur posisi absolute */
+    top: 20px; /* Jarak dari atas */
+    left: 20px; /* Jarak dari kiri */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.title {
+    margin-top: 60px; /* Menambahkan jarak agar tidak bertabrakan dengan back icon */
+    font-size: 24px;
+    color: #333;
+}
+
+        .back-icon img {
+        width: 30px;
+        height: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .consultation-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .main-content {
+            width: 65%;
+            padding: 30px;
+            background-color: #e1f5fe;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #757575;
+        }
+
+        .client-name {
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-size: 18px;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .section p, .section ol {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section ol {
+            padding-left: 20px;
+        }
+
+        .section ol li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="back-icon">
+                <a href="konselingHome.html">
+                    <img src="../assets/img/Go Back (1).png" alt="Go Back">
+                </a>
+            </div>
+            <h1 class="title">Hasil Konseling</h1>
+            <img src="../assets/img/hasilKonsultasi.png" alt="Konsultasi" class="consultation-image">
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h2>dr. Olivia Gabriella</h2>
+                <p>05 Oktober 2024</p>
+                <p class="client-name">Nama Klien: Rifa Qonitah</p>
+            </div>
+            <div class="section">
+                <h3>Latar Belakang dan Kondisi Klien</h3>
+                <p>Klien menyampaikan bahwa akhir-akhir ini mengalami tingkat stres yang meningkat akibat tekanan pekerjaan. Klien merasa sulit untuk mengelola waktu dan beban kerja yang berlebihan, yang berdampak pada kualitas tidur dan konsentrasi. Klien juga melaporkan adanya perasaan cemas terkait ketidakmampuan untuk menyelesaikan tugas tepat waktu.</p>
+            </div>
+            <div class="section">
+                <h3>Masalah Utama yang Dibahas</h3>
+                <ol>
+                    <li>Stres terkait pekerjaan: Tekanan dari tugas yang bertumpuk dan deadline ketat.</li>
+                    <li>Gangguan tidur: Klien mengalami kesulitan tidur dan bangun dalam keadaan lelah.</li>
+                    <li>Kecemasan: Klien merasa cemas dan takut gagal dalam menyelesaikan tanggung jawabnya.</li>
+                    <li>Kurangnya waktu untuk self-care: Klien tidak memiliki cukup waktu untuk melakukan aktivitas yang menenangkan atau menyenangkan di luar pekerjaan.</li>
+                </ol>
+            </div>
+            <div class="section">
+                <h3>Rekomendasi dan Saran</h3>
+                <ol>
+                    <li>Manajemen Waktu: Disarankan untuk membuat jadwal kerja yang lebih terstruktur dengan membagi tugas menjadi beberapa bagian yang lebih kecil dan realistis. Prioritaskan tugas berdasarkan urgensi dan pentingnya.</li>
+                    <li>Teknik Relaksasi: Konsultan merekomendasikan teknik relaksasi seperti latihan pernapasan dalam (deep breathing), meditasi, atau yoga untuk membantu mengurangi stres dan kecemasan. Aktivitas ini bisa dilakukan selama 10-15 menit setiap hari.</li>
+                    <li>Self-care: Penting untuk meluangkan waktu setiap hari untuk melakukan hal-hal yang menyenangkan dan menenangkan, seperti hobi atau aktivitas fisik ringan, guna membantu mengembalikan keseimbangan mental.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

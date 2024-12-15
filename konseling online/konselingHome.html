@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konseling Online</title>
+    <style>
+        /* Mengimpor font Caveat dari Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+        /* Reset styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+            background-color: #cfe0f9;
+        }
+
+        .container {
+            width: 50%;
+            padding: 20px;
+        }
+
+        /* Bagian Kiri */
+        .left-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px; /* Menggeser posisi ke kiri */
+        }
+
+        .back-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding-left: 0; /* Atur padding ke 0 jika ada tambahan padding sebelumnya */
+        }
+
+        .back-icon img {
+        width: 30px;
+        height: 30px;
+        }
+
+        .title {
+        font-family: 'Caveat', cursive;
+        font-size: 3rem;
+        color: #304ffe;
+        margin: 0; /* Menghilangkan margin bawaan */
+        }
+
+        .illustration {
+        margin: auto;
+        width: 100%; /* Ubah ukuran gambar menjadi 80% dari kontainer */
+        max-width: 500px; /* Tingkatkan ukuran maksimal gambar */
+        }
+
+        .description {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            color: #1e3a8a;
+            font-size: 1rem;
+            line-height: 1.5;
+            left: 40px;
+            position: relative; /* Mengaktifkan positioning */
+            top: -40px; /* Naikkan tombol */
+        }
+
+        .description h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Bagian Kanan */
+        .right-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .right-container img {
+            width: 50%;
+            max-width: 500px;
+            /* margin-bottom: 0; */
+        }
+
+
+        .activity-buttons {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative; /* Mengaktifkan positioning */
+        top: -60px; /* Naikkan tombol */
+        }
+
+        .activity-buttons button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #bbdefb;
+            color: #0d47a1;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .activity-buttons button:hover {
+            background-color: #90caf9;
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Bagian Kiri -->
+    <div class="container left-container">
+        <div class="back-icon">
+            <a href="../Utama.html">
+                <img src="../assets/img/Go Back (1).png" alt="Back Icon">
+            </a>
+            <h1 class="title">Konseling Online</h1>
+        </div>
+        <img src="../assets/img/konseling1.png" alt="Konseling Ilustrasi" class="illustration">
+        <div class="description">
+            <h2>Mengapa harus lakukan konseling?</h2>
+            <p><strong>1. MetaCare memiliki konselor berpengalaman di seluruh Indonesia</strong><br>
+                Kamu bisa terhubung langsung dengan cepat dan mudah, serta tidak perlu meragukan kualitas konsultasi yang
+                ditawarkan.
+            </p>
+            <p><strong>2. Privasi kamu tetap terjaga</strong><br>
+                Tak perlu khawatir, semua percakapan dan diagnosis kesehatanmu dengan konselor di MetaCare akan terjaga
+                keprivasianya.
+            </p>
+        </div>
+    </div>
+
+    <!-- Bagian Kanan -->
+    <div class="container right-container">
+        <img src="../assets/img/konseling2.png" alt="Ilustrasi Support" class="illustration">
+        <div class="activity-buttons">
+            <button onclick="location.href='pilih_jadwal.php'"  >Pilih Jadwal Konseling</button>
+            <button onclick="location.href='riwayat_konseling.php'">Lihat Jadwal Tersimpan</button>
+            <button onclick="location.href='hasilKonseling.html'">Hasil Konseling</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+    <link rel="icon" href="../Gambar MetaCare/MetaCare-2.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #d0e3f5;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 45px;
+            margin-top: 0;
+            color: #4a6fa5;
+            font-family: 'Caveat';
+        }
+
+        .sidebar p {
+            font-size: 20px;
+            color: #4a6fa5;
+            margin-top: -20px;
+            font-family: 'Poppins';
+
+        }
+
+        .entry-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .entry-item {
+            padding: 10px;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .entry-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10%;
+            margin-right: 10px;
+        }
+
+        .entry-item:hover {
+            background-color: #e8f0fb;
+        }
+
+        .entry-date {
+            font-size: 12px;
+            color: #7a7a7a;
+        }
+
+        .content {
+            width: 67%;
+            padding: 40px;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            color: #4a6fa5;
+            margin: 0;
+            font-family: 'Poppins';
+        }
+
+        .content .date {
+            color: #a9a9a9;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-family: 'Poppins';
+        }
+
+        .content img {
+            width: 500px;
+            height: 250px;
+            border-radius: 8px;
+            margin-left: 250px;
+            margin-right: 250px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Sidebar Buttons */
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+
+        .sidebar-button {
+            background-color: #4a6fa5;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .sidebar-button:hover {
+            background-color: #3a5d85;
+        }
+        .no-underline {
+            text-decoration: none;
+            color: black;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            padding: 13px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 700px;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <audio controls autoplay hidden loop>
+        <source src="../Lagu MetaCare/lagu relaksasi.mp3" type="audio/mp3">
+    </audio>
+    <div class="sidebar">
+        <div class="search-container">
+            <a href="../Utama.html">
+                <button class="search-button">
+                    <img src="../assets/img/back.png" alt="Search Icon" style="width: 40px;">
+                </button>
+            </a>
+            <input type="text" class="search-input" placeholder="Diary">
+        </div>
+        <h2>Diary</h2>
+        <p>Ayo ekspresikan perasaanmu!</p>
+        <ul class="entry-list">
+            <a href = "Diary.html" class ="no-underline">
+                <li class="entry-item"> 
+                    <img src="../assets/img/Rectangle 108.png" alt="Langkah Kecil">
+                    <div>
+                        <strong>Langkah Kecil</strong>
+                        <div class="entry-date">05 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary1.html" class ="no-underline">
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 97.png" alt="Mimpi">
+                    <div>
+                        <strong>Mimpi</strong>
+                        <div class="entry-date">06 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary2.html" class ="no-underline">
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 99.png" alt="Harapan">
+                    <div>
+                        <strong>Harapan</strong>
+                        <div class="entry-date">08 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary3.html" class ="no-underline">
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 101.png" alt="Harapan">
+                    <div>
+                        <strong>Capek!?</strong>
+                        <div class="entry-date">09 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary4.html" class ="no-underline" >
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 103.png" alt="Harapan">
+                    <div>
+                        <strong>Ayo Kuat!!</strong>
+                        <div class="entry-date">09 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary5.html" class ="no-underline" >
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 105.png" alt="Harapan">
+                    <div>
+                        <strong>Renungan</strong>
+                        <div class="entry-date">10 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+            <a href = "Diary.html" class ="no-underline" >
+                <li class="entry-item">
+                    <img src="../assets/img/Rectangle 107.png" alt="Harapan">
+                    <div>
+                        <strong>Tenang</strong>
+                        <div class="entry-date">11 Oktober 2024</div>
+                    </div>
+                </li>
+            </a>
+        </ul>
+        <div class="sidebar-buttons">
+            <a href = "NewDiary.html" class ="no-underline">
+                <button class="sidebar-button">New Diary</button>
+            </a>
+            <button class="sidebar-button">Delete Diary</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Tenang</h1>
+        <div class="date">11 Oktober 2024</div>
+        <img src="../assets/img/tenang.png" alt="Steps">
+        <p>
+            Hari ini aku memutuskan untuk meluangkan waktu untuk diri sendiri, mencari ketenangan di tengah kesibukan yang selalu datang silih berganti. Aku tahu kadang aku terlalu sibuk mengejar banyak hal, namun hari ini aku ingin memberi ruang bagi diriku untuk berhenti sejenak, menarik napas, dan menikmati kedamaian.
+        </p>
+        <p>
+            Pagi ini, aku duduk di dekat jendela, memandang langit biru yang cerah. Angin sepoi-sepoi menyentuh wajahku, dan rasanya begitu menenangkan. Tidak ada target yang harus dicapai, tidak ada deadline yang menghantui—hanya aku, udara segar, dan dunia yang bergerak dengan ritme yang lebih pelan.
+        </p>
+        <p>
+            Aku menyadari, betapa pentingnya untuk memberi waktu bagi diri sendiri. Dalam hiruk-pikuk kehidupan, kita sering lupa untuk berhenti, meresapi momen, dan menghargai ketenangan. Hari ini aku belajar bahwa ketenangan bukan hanya tentang tidak melakukan apa-apa, tetapi lebih kepada memberi ruang untuk diri sendiri untuk merasa cukup, meski dunia terus bergerak.
+        </p>
+        <p>
+            Sore harinya, aku berjalan-jalan di taman, mendengar suara dedaunan yang bergesekan, dan melihat anak-anak bermain dengan riang. Semua itu membuatku merasa sangat bersyukur atas kedamaian yang ada. Aku tidak perlu mencari kebahagiaan yang besar, karena ketenangan seperti ini sudah cukup untuk membuat hatiku merasa tenang.
+        </p>
+        <p>
+            Aku tahu bahwa hidup tidak selalu bisa sesederhana ini, namun hari ini aku merasa bahwa ketenangan yang sederhana adalah hal yang paling berharga. Aku akan berusaha untuk membawa ketenangan ini dalam setiap langkahku, dan menjadikannya sebagai bagian dari hidupku yang lebih damai.
+        </p>
+    </div>
+</body>
+</html>

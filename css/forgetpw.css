@@ -1,0 +1,86 @@
+
+body {
+    background-color:rgb(197, 211, 236);
+}
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    margin-left: 50px;
+}
+
+.welcoming {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.beranda-title {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(9, 68, 117);
+    margin: 20px;
+}
+.welcoming img{
+    width: 600px;
+}
+
+.katakata{
+    width: 600px;
+    text-align: center;
+}
+
+.katakata h1{
+    font-size: 30px;
+    color: #1C4060;
+    letter-spacing: 6px;
+    font-weight: bold;  
+}
+
+.katakata p1{
+    font-size: 20px;
+    color: #1C4060;
+}
+
+.isiform{
+    text-align: left;
+    width: 800px
+}
+.isiform label {
+    font-size: 20px;
+    color: black;
+    display: block;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.isiform input {
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+
+
+.button {
+    display: inline-block;
+    margin-left: 30px;
+    width: 86%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.button:hover {
+    background-color: #0056b3; 
+}

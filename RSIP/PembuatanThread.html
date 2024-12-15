@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembuatan Thread Anonim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('Pemantauan Progress (3).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: calc(100% - 60px);
+            height: calc(100% - 60px);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .back-arrow {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .back-icon {
+            width: 140%;
+            height: 140%;
+            object-fit: contain;
+        }
+
+        .title-container {
+            background-color: #F6FBFF;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 100px;
+            font-weight: bold;
+            margin-top: 50px;
+            color: #1a374d;
+            font-family: 'Caveat', cursive;
+        }
+
+        .thread-container {
+            width: 80%;
+            height: 60vh;
+            padding: 20px;
+            background-image:url('Rectangle 99.png');
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+        }
+
+        .separator-line {
+            width: 100%;
+            height: 2px;
+            background-color: #AAADB0;
+        }
+       
+        .title-input, .content-input {
+            width: 100%;
+            padding: 10px;
+            color: #6c757d;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent; 
+            resize: none;
+            outline: none; 
+        }
+
+        .title-input {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .content-input {
+            font-size: 18px;
+            height: calc(100% - 60px); 
+        }
+        .send-icon {
+            width: 50px;
+            height: 60px;
+            position: absolute;
+            bottom: 20px;
+            right: 150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            <a href="DaftarThread.html">
+            <img src="Go Back.png" alt="Back Button" class="back-icon">
+            </a>
+        </div>
+        <div class="title-container">
+            Pembuatan Thread Anonim
+        </div>
+        <div class="thread-container">
+            <input type="text" class="title-input" placeholder="Judul Thread">
+            <div class="separator-line"></div>
+            <textarea class="content-input" placeholder="Isi Thread.."></textarea>
+            <img src="image 25.png" alt="Send Button" class="send-icon">
+        </div>
+    </div>
+</body>
+</html>

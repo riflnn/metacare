@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Aktivitas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #bbdefb;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            gap: 20px;
+        }
+
+        /* Left Container */
+        .left-container {
+            flex: 1;
+            background-color: #e3f2fd;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        
+
+        .back-icon {
+            position: absolute;
+            top: 20px; /* Atur jarak dari atas */
+            left: 20px; /* Atur jarak dari kiri */
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0d47a1;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .button {
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #bbdefb;
+        }
+
+        .illustration {
+            width: 100%;
+            max-width: 300px;
+            margin-top: auto;
+        }
+
+        /* Right Container */
+        .right-container {
+            flex: 2;
+            background-color: #e3f2fd;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .right-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 20px;
+        }
+
+        .appointment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .appointment-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #bbdefb;
+            border-radius: 10px;
+        }
+
+        .doctor-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doctor-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .doctor-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .doctor-title {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .appointment-time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .days-left {
+            background-color: #90caf9;
+            color: #0d47a1;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* Modal Pop-Up */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            font-size: 20px;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #cancelBtn {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        #editBtn {
+            background-color: #64b5f6;
+            color: #fff;
+        }
+
+        /* Pop-up Modal Hapus */
+        #deletePopup {
+            display: none; /* Awalnya disembunyikan */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #deletePopup .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+        }
+
+        #deletePopup h2 {
+            margin-bottom: 10px;
+            color: #d32f2f;
+        }
+
+        #deletePopup p {
+            margin-bottom: 20px;
+        }
+
+        #deletePopup .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #deletePopup .button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #deletePopup .button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Container -->
+        <div class="left-container">
+            <img src="/assets/img/Go Back (1).png" alt="Back Icon" class="back-icon" onclick="window.location.href='konselingHome.html'">
+            <div class="title">Riwayat Aktivitas</div>
+            <div class="button-group">
+                <button class="button">Dijadwalkan</button>
+                <button class="button">Selesai</button>
+            </div>
+            <img src="/assets/img/ilustrasiRiwayat.png" alt="Illustration" class="illustration">
+        
+        </div>
+
+        <!-- Right Container -->
+        <div class="right-container">
+            <div class="right-title">Konseling Terjadwal</div>
+            <div class="appointment-list">
+                <!-- Appointment 1 -->
+                <div class="appointment-card" data-id="1">
+                    <div class="doctor-info">
+                        <img src="/assets/img/dokter1.png" alt="Doctor 1" class="doctor-image">
+                        <div class="doctor-details">
+                            <div class="doctor-name">dr. Olivia Gabriella</div>
+                            <div class="doctor-title">Consultant - Psychiatrist</div>
+                            <div class="appointment-time">Sunday, 10 November 2024 - 01:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <img src="/assets/img/edit.png" alt="Edit Icon" class="icon edit-icon">
+                        <img src="/assets/img/delete.png" alt="Delete Icon" class="icon delete-icon">
+                    </div>
+                    <div class="days-left">3 Days Left</div>
+                </div>
+
+                <!-- Appointment 2 -->
+                <div class="appointment-card" data-id="2">
+                    <div class="doctor-info">
+                        <img src="/assets/img/dokter2.png" alt="Doctor 2" class="doctor-image">
+                        <div class="doctor-details">
+                            <div class="doctor-name">Frans William, M.Psi.</div>
+                            <div class="doctor-title">Consultant - Psychiatrist</div>
+                            <div class="appointment-time">Monday, 11 November 2024 - 09:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <img src="/assets/img/edit.png" alt="Edit Icon" class="icon edit-icon">
+                        <img src="/assets/img/delete.png" alt="Delete Icon" class="icon delete-icon">
+                    </div>
+                    <div class="days-left">4 Days Left</div>
+                </div>
+
+                <!-- Appointment 3 -->
+                <div class="appointment-card" data-id="3">
+                    <div class="doctor-info">
+                        <img src="/assets/img/dokter3.png" alt="Doctor 3" class="doctor-image">
+                        <div class="doctor-details">
+                            <div class="doctor-name">dr. Aaliyah Shirein</div>
+                            <div class="doctor-title">Consultant - Psychiatrist</div>
+                            <div class="appointment-time">Monday, 11 November 2024 - 01:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <img src="/assets/img/edit.png" alt="Edit Icon" class="icon edit-icon">
+                        <img src="/assets/img/delete.png" alt="Delete Icon" class="icon delete-icon">
+                    </div>
+                    <div class="days-left">4 Days Left</div>
+                </div>
+
+                <!-- Appointment 4 -->
+                <div class="appointment-card" data-id="4">
+                    <div class="doctor-info">
+                        <img src="/assets/img/dokter4.png" alt="Doctor 4" class="doctor-image">
+                        <div class="doctor-details">
+                            <div class="doctor-name">dr. Alvino Adijaya</div>
+                            <div class="doctor-title">Consultant - Psychiatrist</div>
+                            <div class="appointment-time">Wednesday, 13 November 2024 - 01:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <img src="/assets/img/edit.png" alt="Edit Icon" class="icon edit-icon">
+                        <img src="/assets/img/delete.png" alt="Delete Icon" class="icon delete-icon">
+                    </div>
+                    <div class="days-left">6 Days Left</div>
+                </div>
+
+                <div class="appointment-card" data-id="5">
+                    <div class="doctor-info">
+                        <img src="/assets/img/dokter1.png" alt="Doctor 1" class="doctor-image">
+                        <div class="doctor-details">
+                            <div class="doctor-name">dr. Olivia Gabriella</div>
+                            <div class="doctor-title">Consultant - Psychiatrist</div>
+                            <div class="appointment-time">Sunday, 13 November 2024 - 01:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <img src="/assets/img/edit.png" alt="Edit Icon" class="icon edit-icon">
+                        <img src="/assets/img/delete.png" alt="Delete Icon" class="icon delete-icon">
+                    </div>
+                    <div class="days-left">6 Days Left</div>
+                </div>
+            </div>
+            <!-- Modal Edit Jadwal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <h2>Edit Jadwal</h2>
+                <p>Apakah anda ingin mengedit jadwal?</p>
+                <div class="modal-buttons">
+                    <button id="cancelBtn" class="modal-btn">Batal</button>
+                    <button id="editBtn" class="modal-btn edit">Edit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pop-up Konfirmasi Hapus -->
+        <div id="deletePopup" class="modal">
+            <div class="modal-content">
+                <h2>Hapus Jadwal</h2>
+                <p>Apakah anda yakin ingin menghapus jadwal ini?</p>
+                <div class="button-group">
+                    <button id="confirmDeleteBtn" class="button">Hapus</button>
+                    <button id="cancelDeleteBtn" class="button">Batal</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // Mengambil elemen modal dan tombol
+        const modal = document.getElementById("editModal");
+        const editButtons = document.querySelectorAll(".edit-icon");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const editBtn = document.getElementById("editBtn");
+    
+        // Fungsi untuk membuka modal
+        editButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                modal.style.display = "flex";
+            });
+        });
+    
+        // Fungsi untuk menutup modal ketika tombol "Batal" diklik
+        cancelBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    
+        // Fungsi ketika tombol "Edit" diklik
+        editBtn.addEventListener("click", () => {
+            window.location.href = "pilihJadwal.html"; // Mengarahkan ke halaman pilih jadwal
+        });
+    
+        // Menutup modal ketika mengklik area luar modal
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Ambil elemen-elemen pop-up Hapus
+        const deletePopup = document.getElementById("deletePopup");
+        const cancelDeleteBtn = document.getElementById("cancelDeleteBtn");
+        const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+        const deleteIcons = document.querySelectorAll(".delete-icon");
+
+        let scheduleToDelete = null;
+        // Tampilkan pop-up Hapus saat klik ikon delete
+        deleteIcons.forEach((icon) => {
+            icon.addEventListener("click", () => {
+                scheduleToDelete = event.target.closest('.appointment-card');
+            deletePopup.style.display = "flex";
+            });
+        });
+
+        // Tutup pop-up saat klik tombol Batal
+        cancelDeleteBtn.addEventListener("click", () => {
+            deletePopup.style.display = "none";
+        });
+
+        // Konfirmasi penghapusan jadwal
+        confirmDeleteBtn.addEventListener("click", () => {
+            if (scheduleToDelete) {
+                scheduleToDelete.remove(); // Menghapus elemen jadwal dari DOM
+            alert("Jadwal telah dihapus!"); // Bisa diganti dengan aksi penghapusan jadwal
+            }
+        deletePopup.style.display = "none";
+        scheduleToDelete = null; // Reset jadwal yang akan dihapus
+        });
+    </script>
+
+</body>
+
+</html>

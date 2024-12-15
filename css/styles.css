@@ -1,0 +1,43 @@
+
+body {
+    background-color:rgb(197, 211, 236);
+}
+
+
+.beranda-title {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(9, 68, 117);
+    text-align: left;
+    margin: 20px;
+}
+.opening{
+    display: flex;                   
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 100px;
+}
+
+.opening img {
+    width: 600px;
+}
+
+.regist-button, .login-button{
+    border: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    width: 400px;
+    height: 70px;
+    border-radius: 15px;
+    background-color:aliceblue; 
+    cursor: pointer;
+    text-align: center;
+}
+.button {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

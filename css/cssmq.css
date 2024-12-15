@@ -1,0 +1,132 @@
+
+body {
+    background-color:rgb(197, 211, 236);
+}
+
+.container {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.Go-Back {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Go-Back img {
+    width: 40px; 
+    height: 40px;
+}
+
+.tulisanatas{
+    color: #1C4060;
+    font-family: "PT Serif Caption";
+    font-style: italic;
+}
+
+.searchbar{
+    width: 100%; 
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+.pencarian {
+    display: flex;
+    align-items: center;
+    /* margin-top: 10px; */
+    width: 700px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    opacity: 0.9;
+    background: #F6FBFF;
+
+}
+
+.pencarian input[type="text"] {
+    width: 551px;
+    height: 31px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    margin-left: 50px;
+}
+
+.pencarian button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.pencarian img{
+    width: 30px;
+}
+
+.kategori{
+    margin-top: 50px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0;
+    background: linear-gradient(180deg, #FFF 46.62%, rgba(147, 196, 255, 0.70) 100%);
+}
+
+.pilihannya{
+    display: flex; 
+    gap: 150px;
+    justify-content: center;
+}
+.kategori h1{
+    width: 498px;
+    height: 93px;
+    flex-shrink: 0;
+    color: #1C4060;
+    font-family: Ramabhadra;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.katkiri, .katkanan {
+    display: flex;
+    flex-direction: column;
+}
+.listkategori {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient(245deg, rgba(147, 196, 255, 0.40) 29.19%, rgba(226, 184, 252, 0.40) 76.51%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 500px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: "Sansita One";
+    font-size: 30px;
+    color: #000;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    gap: 30px;
+}
+.listkategori a{
+    display: block; 
+    text-decoration: none;
+}
+
+
+
+.imgfriendship {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}

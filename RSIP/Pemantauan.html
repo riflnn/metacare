@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemantauan Progress</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('Pemantauan Progress (3).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: calc(100% - 60px);
+            height: calc(100%);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0px;
+            position: relative;
+            margin: 30px;
+            border-radius: 15px;
+        }
+        .back-arrow {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .back-icon {
+            width: 140%;
+            height: 140%;
+            object-fit: contain;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .header-box {
+            background-color: #F6FBFF;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(50%);
+            margin-top: 55px;
+        }
+
+        .header-box .title {
+            font-size: 80px;
+            font-weight: bold;
+            color: #032F45;
+            margin-bottom: 5px;
+            font-family: 'Caveat', cursive;
+        }
+
+        .header-box .description {
+            font-size: 20px;
+            color: #032F45;
+        }
+
+        .description strong {
+            font-weight: bold;
+        }
+
+        .graph-icon {
+            width: 450px;
+            height: 300px;
+            background-image: url('image 22.png');
+            margin-left: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 35px;
+        }
+
+        .progress-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .progress-box {
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            font-size: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            margin-bottom: 15px;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .progress-box p {
+            margin-bottom: 10px;
+            color: #032F45;
+            font-weight: bold;
+        }
+
+        .progress-box span {
+            display: block;
+            color: #032F45;
+            margin-bottom: 8px;
+        }
+
+        .progress-box a {
+            color: #4088AC;
+            text-decoration: none;
+            position: absolute;
+            right: 20px;
+            bottom: 3px;
+        }
+
+        .progress-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            <a href="../Utama.html"><img src="Go Back.png" alt="Back Button" class="back-icon"></a>
+        </div>   
+        <div class="header">
+            <div class="header-box">
+                <div class="title">Pemantauan <br> Progress</div>
+                <div class="description">Lihat riwayat kondisi kesehatan mental mu <br> melalui <strong>Laporan Progress</strong></div>
+            </div>
+            <div class="graph-icon"></div> 
+        </div>
+        
+        <div class="progress-table">
+            <div class="progress-box">
+                <p>Progress</p>
+                <span>1 Juli 2024 - 31 Juli 2024</span>
+                <a href="DetailJuli.html">Lihat Detail</a>
+            </div>
+            <div class="progress-box">
+                <p>Progress</p>
+                <span>1 Agustus 2024 - 31 Agustus 2024</span>
+                <a href="DetailAgustus.html">Lihat Detail</a>
+            </div>
+            <div class="progress-box">
+                <p>Progress</p>
+                <span>1 September 2024 - 31 September 2024</span>
+                <a href="DetailSeptember.html">Lihat Detail</a>
+            </div>
+            <div class="progress-box">
+                <p>Progress</p>
+                <span>1 Oktober 2024 - 31 Oktober 2024</span>
+                <a href="DetailOktober.html">Lihat Detail</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

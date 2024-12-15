@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel Populer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #F6FBFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      background-color: #D2E0FB;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin-left: 20px;
+      background-color: #f0f4f8;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #666;
+      border: none;
+      outline: none;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #2d3e50;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      gap: 20px;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .article {
+      background-color: #f0f4f8;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.2s;
+    }
+
+    .article:hover {
+      transform: scale(1.02);
+    }
+
+    .article img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .article-details {
+      flex-grow: 1;
+    }
+
+    .article-title {
+      font-size: 16px;
+      color: #2d3e50;
+      font-weight: bold;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #888;
+      margin: 5px 0;
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background-color: #2d9cdb;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <a href="../Utama.html">
+      <img src="Go Back (1).png" alt="Back Icon">
+    </a>
+    
+    <input type="text" class="search-bar" placeholder="Masukkan kata kunci pencarian">
+  </div>
+
+  <h2>Artikel Populer</h2>
+  
+  <div class="content">
+    <div class="left">
+      <img src="artikel1.jpg" alt="Gangguan Mental bukan Orang Gila">
+      <p>Gangguan Mental bukan Orang Gila<br><small><a href="materi.html" >Baca Penjelasannya di Artikel Ini</a></small></p>
+    </div>
+
+    <div class="right">
+      <div class="article">
+        <img src="materi1.png" alt="Artikel 1">
+        <div class="article-details">
+          <div class="article-title"><a href="materi.html">HAPUS STIGMA JADIKAN KESEHATAN MENTAL</a></div>
+          <div class="article-date">10 Des 2024 19:00</div>
+          <div class="article-tags">
+            <div class="tag">Mental Health</div>
+            <div class="tag">Stigma</div>
+            <div class="tag">Global</div>
+            <div class="tag">Kesehatan Fisik</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="article">
+        <img src="materi2.png" alt="Artikel 2">
+        <div class="article-details">
+          <div class="article-title"> <a href="materi.html">4 Cara Menjaga Mental Health Di Kantor</a></div>
+          <div class="article-date">7 May 2023 12:00</div>
+          <div class="article-tags">
+            <div class="tag">Mental Health</div>
+            <div class="tag">Pekerjaan</div>
+            <div class="tag">WFH</div>
+            <div class="tag">Work</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="materi3.png" alt="Artikel 3">
+        <div class="article-details">
+          <div class="article-title"><a href="materi.html">Peran Penting Psikologi Komunikasi</a></div>
+          <div class="article-date">10 Des 2024 18:00</div>
+          <div class="article-tags">
+            <div class="tag">Mental Health</div>
+            <div class="tag">Stigma</div>
+            <div class="tag">Global</div>
+            <div class="tag">Kesehatan Fisik</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="materi4.png" alt="Artikel 4">
+        <div class="article-details">
+          <div class="article-title"><a href="materi.html">HAPUS STIGMA JADIKAN KESEHATAN MENTAL</a></div>
+          <div class="article-date">10 Des 2024 19:00</div>
+          <div class="article-tags">
+            <div class="tag">Mental Health</div>
+            <div class="tag">Stigma</div>
+            <div class="tag">Kesehatan Fisik</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="materi5.png" alt="Artikel 5">
+        <div class="article-details">
+          <div class="article-title"><a href="materi.html">PRIORITASKAN KESEHATAN MENTAL!</a></div>
+          <div class="article-date">10 Des 2024 19:00</div>
+          <div class="article-tags">
+            <div class="tag">Mental Health</div>
+            <div class="tag">Stigma</div>
+            <div class="tag">Kesehatan Fisik</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

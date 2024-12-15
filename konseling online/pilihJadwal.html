@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Konselor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #cfe0f9;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .left-container {
+            width: 40%;
+            padding: 20px;
+            background-color: #e3f2fd;
+            border-right: 1px solid #bbdefb;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .back-icon {
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .back-icon img {
+            width: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .search-bar img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .doctor-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .doctor-card {
+            display: flex;
+            align-items: center;
+            background-color: #bbdefb;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .doctor-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .doctor-info {
+            flex: 1;
+        }
+
+        .doctor-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .rating img {
+            width: 15px;
+            height: 15px;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .book-btn {
+            background-color: #ffeb3b;
+            color: #0d47a1;
+            cursor: pointer;
+        }
+
+        .full-btn {
+            background-color: #ccc;
+            color: #555;
+        }
+
+        .right-container {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .right-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .right-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .right-header h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: #304ffe;
+        }
+
+        .doctor-details {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .schedule-container {
+            gap: 30px;
+        }
+
+        .schedule-dates {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .date-slot {
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+        .time-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: wrap; /* Menyusun elemen dalam baris */
+            gap: 5px;
+            margin-bottom: 20px; /* Menambahkan jarak antar kategori */
+        }
+
+        .time-slot {
+            flex: 1 1 180px; /* Lebar minimum diperbesar menjadi 180px */
+            width: 150;
+            height: 60px;
+            padding: 10px;
+            text-align: center;
+            background-color: #bbdefb;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .book-appointment {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            background-color: #ffeb3b;
+            border-radius: 10px;
+            color: #0d47a1;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .relax-img {
+        width: 100%;
+        max-width: 800px; /* Atur ukuran kontainer sesuai keinginan */
+        height: auto;
+        margin-top: 20px;
+        }
+        
+        .book-appointment:hover {
+            background-color: #ffe082;
+        }
+
+        .img-responsive {
+        width: 100%;
+        max-width: 800px; /* Ubah ukuran maksimal sesuai kebutuhan */
+        height: auto;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .cancel-btn,.save-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cancel-btn {
+            background-color: #ccc;
+            color: #555;
+        }
+
+        .save-btn {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .cancel-btn:hover {
+            background-color: #bdbdbd;
+        }
+
+        .save-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="back-icon">
+                <a href="konselingHome.html">
+                    <img src="/assets/img/Go Back (1).png" alt="Go Back">
+                </a>
+            </div>
+            <div class="search-bar">
+                <img src="/assets/img/Search.png" alt="Search Icon">
+                <input type="text" placeholder="Search doctor">
+            </div>
+
+            <div class="doctor-list">
+                <div class="doctor-card">
+                    <img src="/assets/img/Dokter1.png" alt="dr. Olivia">
+                    <div class="doctor-info">
+                        <h4>dr. Olivia Gabriella</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.9
+                        </div>
+                    </div>
+                    <button class="book-btn" >Book</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/dokter2.png" alt="dr. Frans">
+                    <div class="doctor-info">
+                        <h4>dr. Frans William</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.8
+                        </div>
+                    </div>
+                    <button class="full-btn">Full</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/dokter3.png" alt="dr. Claire">
+                    <div class="doctor-info">
+                        <h4>dr. Claire Yosephine</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.8
+                        </div>
+                    </div>
+                    <button class="full-btn">Full</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/dokter4.png" alt="dr. Alvino">
+                    <div class="doctor-info">
+                        <h4>dr. Alvino Adijaya</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.7
+                        </div>
+                    </div>
+                    <button class="full-btn">Full</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/Dokter1.png" alt="dr. Olivia">
+                    <div class="doctor-info">
+                        <h4>dr. Olivia Gabriella</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.9
+                        </div>
+                    </div>
+                    <button class="book-btn">Book</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/dokter2.png" alt="dr. Frans">
+                    <div class="doctor-info">
+                        <h4>dr. Frans William</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.8
+                        </div>
+                    </div>
+                    <button class="full-btn">Full</button>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="/assets/img/dokter3.png" alt="dr. Claire">
+                    <div class="doctor-info">
+                        <h4>dr. Claire Yosephine</h4>
+                        <div class="rating">
+                            <img src="/assets/img/Star.png"> 4.8
+                        </div>
+                    </div>
+                    <button class="full-btn">Full</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="right-header">
+                <img src="/assets/img/dokter1.png" alt="Dokter">
+                <div>
+                    <h3>Konselor</h3>
+                    <p>dr. Olivia Gabriella - Consultant Psychiatrist</p>
+                </div>
+            </div>
+            <div class="doctor-details">
+                Dr. Olivia is a dedicated mental health professional committed to providing the best care to patients.
+            </div>
+            <h3>Schedule for January</h3>
+            <div class="schedule-dates"></div>
+
+        <script>
+            const scheduleDates = document.querySelector('.schedule-dates');
+            for (let i = 1; i <= 31; i++) {
+                const dateSlot = document.createElement('div');
+                dateSlot.className = 'date-slot';
+                dateSlot.textContent = i.toString().padStart(2, '0');
+                scheduleDates.appendChild(dateSlot);
+            }
+        </script>
+                <h2>Morning</h2>
+
+            <div class="time-row">
+                <div class="category">
+                    <div class="time-slot">09:00 AM</div>
+                    <div class="time-slot">09:30 AM</div>
+                    <div class="time-slot">10:00 AM</div>
+                    <div class="time-slot">10:30 AM</div>
+                    <div class="time-slot">11:00 AM</div>
+                </div>
+            </div>
+
+            <h2>Afternoon</h2>
+            <div class="time-row">
+                <div class="category">
+                    <div class="time-slot">01:00 PM</div>
+                    <div class="time-slot">01:30 PM</div>
+                    <div class="time-slot">02:00 PM</div>
+                    <div class="time-slot">02:30 PM</div>
+                    <div class="time-slot">03:00 PM</div>
+                    <div class="time-slot">03:30 PM</div>
+                    <div class="time-slot">04:00 PM</div>
+                </div>
+            </div>
+                
+            <h2>Evening</h2>
+            <div class="time-row">
+                <div class="category">
+                    <div class="time-slot">07:00 PM</div>
+                    <div class="time-slot">07:30 PM</div>
+                    <div class="time-slot">08:00 PM</div>
+                    <div class="time-slot">08:30 PM</div>
+                    <div class="time-slot">09:00 PM</div>
+                </div>
+            </div>
+                
+            
+            <div class="book-appointment">BOOK AN APPOINTMENT</div>
+            <!-- <div class="relax-img">
+                <img src="relax.png" alt="Relaxing" class="img-responsive">
+            </div> -->
+            
+        </div>
+    </div>
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <h2>Pilih Jadwal</h2>
+            <p id="selectedTime">Apakah anda ingin menyimpan jadwal?</p> <!-- Tambahkan ID ini -->
+            <div class="modal-actions">
+                <button id="cancelBtn" class="cancel-btn">Batal</button>
+                <button id="saveBtn" class="save-btn">Simpan</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Ambil elemen modal, tombol, dan slot waktu
+            const scheduleModal = document.getElementById('scheduleModal');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const timeSlots = document.querySelectorAll('.time-slot');
+            const selectedTimeText = document.getElementById('selectedTime');
+            let selectedTime = '';
+    
+            // Fungsi untuk membuka modal dan menampilkan waktu yang dipilih
+            function openModal(time) {
+                selectedTime = time;
+                selectedTimeText.textContent = `Apakah anda ingin menyimpan jadwal pada jam ${time}?`;
+                scheduleModal.style.display = 'block';
+            }
+    
+            // Fungsi untuk menutup modal
+            function closeModal() {
+                scheduleModal.style.display = 'none';
+            }
+    
+            // Menambahkan event listener ke setiap slot waktu
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', (event) => {
+                const time = event.target.textContent; // Ambil teks waktu dari elemen yang diklik
+                openModal(time); // Panggil modal dengan waktu yang dipilih
+                });
+            });
+    
+            // Event listener untuk tombol "Batal"
+            cancelBtn.addEventListener('click', closeModal);
+    
+            // Event listener untuk tombol "Simpan"
+            saveBtn.addEventListener('click', () => {
+                alert(`Jadwal pada jam ${selectedTime} telah disimpan!`);
+                closeModal();
+            });
+    
+            // Menutup modal saat area di luar modal diklik
+            window.addEventListener('click', (event) => {
+                if (event.target === scheduleModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>

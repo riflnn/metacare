@@ -1,0 +1,104 @@
+
+body {
+    background-color:rgb(197, 211, 236);
+}
+
+.container {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.Go-Back {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Go-Back img {
+    width: 40px; 
+    height: 40px;
+}
+
+.tulisanatas{
+    color: #1C4060;
+    font-family: "PT Serif Caption";
+    font-style: italic;
+}
+.listquotes{
+    margin-top: 50px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0;
+    background: linear-gradient(180deg, #FFF 46.62%, rgba(147, 196, 255, 0.70) 100%);
+}
+
+
+.judul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-family: "Sansita One";
+    font-size: 30px;
+    gap: 20px;
+}
+
+.imgfriendship{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.isiquotes {
+    background: linear-gradient(245deg, rgba(147, 196, 255, 0.40) 29.19%, rgba(226, 184, 252, 0.40) 76.51%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 600px;
+    border: none;
+    font-family: "Sansita One";
+    color: #000;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.judulisiquotes{
+    color: #000 ;
+    text-align: center;
+    font-family: "Sansita Swashed";
+    font-size: 24px;
+    line-height: normal;
+    flex-shrink: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.isinya{
+    color: #000;
+    font-family: "Sarala";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
+}
+.containerquotes{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%; 
+    gap: 50px; 
+
+}
+.isikiri, .isikanan {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pemantauan Progress Agustus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('Pemantauan Progress (2).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: calc(100% - 40px);
+            height: calc(100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 20px;
+            position: relative;
+            margin: 40px;
+            border-radius: 20px;
+            align-items: flex-end; 
+        }
+        
+        .back-arrow {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .back-icon {
+            width: 140%;
+            height: 140%;
+            object-fit: contain;
+        }
+
+        .title-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 40px;
+        }
+
+        .title {
+        font-family: 'Caveat', cursive;
+        font-size: 5em;
+        font-weight: bold;
+        margin: 0;
+        color: #032F45;
+        margin-right: 200px; 
+        margin-left: 150px;
+        }
+
+        .date-range {
+            background-image: url('Rectangle 28.png');
+            padding: 10px 50px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 2em;
+            color: #032F45;
+        }
+
+        .layout-container {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-end; 
+            width: 100%; 
+            margin-top: 20px; 
+        }
+
+        .analysis-link {
+            display: block;
+            font-size: 2.5em; 
+            text-decoration: underline;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 100px;
+            margin-left: 50px;
+        }
+
+        .analysis-link:hover {
+            font-weight: bold;
+        }
+
+
+        .chart-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            background-color: #B3D1EE;
+            padding: 20px;
+            border-radius: 10px;
+            height: 400px;
+            width: 70%; 
+        }
+
+        .y-axis-labels {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        .y-axis-labels span {
+            position: absolute;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #313941;
+        }
+
+        .y-axis-labels span:nth-child(1) { top: 0%; }    
+        .y-axis-labels span:nth-child(2) { top: 20%; }  
+        .y-axis-labels span:nth-child(3) { top: 40%; }   
+        .y-axis-labels span:nth-child(4) { top: 60%; } 
+        .y-axis-labels span:nth-child(5) { top: 80%; }  
+        .y-axis-labels span:nth-child(6) { top: 100%; }  
+
+        .chart-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            position: relative;
+            height: 100%;
+        }
+
+        .chart-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            z-index: 0;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chart-grid-line {
+            height: 1px;
+            background-color: #A5C1DB;
+            opacity: 0.5;
+        }
+
+        .bars {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 100%;
+            z-index: 1; 
+        }
+
+        .chart-bar {
+            width: 18%;
+            background-color: #112E43;
+            margin-left: 20px;
+            margin-bottom: -15px;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s; 
+        }
+
+        .chart-bar:hover {
+            background-color: #4088AC; 
+        }
+
+        .week1 { height: 30%; }
+        .week2 { height: 70%; }
+        .week3 { height: 50%; }
+        .week4 { height: 85%; }
+
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1em;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            <a href="Pemantauan.html"><img src="Go Back.png" alt="Back Button" class="back-icon"></a>
+        </div>        
+        <div class="title-container">
+            <h1 class="title">Pemantauan <br> Progress</h1>
+            <div class="date-range">
+                1 Agustus 2024 <br> - <br> 31 Agustus 2024
+            </div>
+        </div>
+        <div class="layout-container">
+            <a href="HasilAnalisisAgustus.html" class="analysis-link">Lihat Hasil<br>Analisis</a>
+            <div class="chart-container">
+                <div class="y-axis-labels">
+                    <span>100</span>
+                    <span>80</span>
+                    <span>60</span>
+                    <span>40</span>
+                    <span>20</span>
+                    <span>0</span>
+                </div>
+                <div class="chart-content">
+                    <div class="chart-grid">
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="chart-bar week1"></div>
+                        <div class="chart-bar week2"></div>
+                        <div class="chart-bar week3"></div>
+                        <div class="chart-bar week4"></div>
+                    </div>
+                    <div class="chart-label">
+                        <span style="flex: 1; text-align: center;">Week 1</span>
+                        <span style="flex: 1; text-align: center;">Week 2</span>
+                        <span style="flex: 1; text-align: center;">Week 3</span>
+                        <span style="flex: 1; text-align: center;">Week 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

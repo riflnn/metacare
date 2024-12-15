@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Thread Anonim</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('Pemantauan Progress (3).png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: calc(100% - 60px);
+            height: calc(100% - 60px);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .back-arrow {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .back-icon {
+            width: 140%;
+            height: 140%;
+            object-fit: contain;
+        }
+
+        .title-container {
+            background-color: #F6FBFF;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 100px;
+            font-weight: bold;
+            margin-top: 50px;
+            color: #1a374d;
+            font-family: 'Caveat', cursive;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            padding: 13px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 700px;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .threads {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 100px;
+            margin-top: 30px;
+        }
+
+        .thread-container {
+            background-image: url('Rectangle 28.png');
+            border-radius: 10px;
+            padding: 15px;
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            width: 500px;
+        }
+
+        .thread-container h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Sansita Swashed', cursive;
+        }
+
+        .thread-container p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .view-detail {
+            color: #1a374d;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .view-detail:hover {
+            font-weight: bold;
+        }
+
+        .add-thread {
+            bottom: 15px;
+            right: 15px;
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .add-thread img {
+            width: 100px; 
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            <a href="../Utama.html"><img src="Go Back.png" alt="Back Button" class="back-icon"></a>
+        </div>   
+        <div class="title-container">
+            Daftar Thread Anonim
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Stress">
+            <button class="search-button">
+                <img src="image 15.png" alt="Search Icon" style="width: 20px;">
+            </button>
+        </div>
+
+        <div class="threads">
+            <div class="thread-container">
+                <h3>"Stress Nugas Praktikum"</h3>
+                <p>Aku ngerjain nugas hingga sakit mental ....</p>
+                <a href="IsiThreadStressNugasPraktikum.html" class="view-detail">Lihat Detail</a>
+            </div>
+            <div class="thread-container">
+                <h3>"Sendirian Terus Jadi Stress"</h3>
+                <p>Pernah ga si kalian menyendiri mulu sampe-sampe ....</p>
+                <a href="IsiThreadSendirianTerusJadiStress.html" class="view-detail">Lihat Detail</a>
+            </div>
+            <div class="thread-container">
+                <h3>"Memahami RSI Sampe Stress"</h3>
+                <p>Aku berniat belajar RSI malah jadi pusing sendiri ....</p>
+                <a href="IsiThreadMemahamiRSISampeStress.html" class="view-detail">Lihat Detail</a>
+            </div>
+            <div class="thread-container">
+                <h3>"Laprak Banyak Hingga Stress"</h3>
+                <p>Aku dapat tugas laprak RSI dan bener-bener bikin aku ....</p>
+                <a href="IsiThreadLaprakBanyakHinggaStress.html" class="view-detail">Lihat Detail</a>
+            </div>
+        </div>
+        <div class="add-thread">
+            <a href="PembuatanThread.html">
+                <img src="Add New.png" alt="Add Thread Icon">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
